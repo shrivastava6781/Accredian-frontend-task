@@ -22,7 +22,11 @@ const ReferEarn = () => {
     e.preventDefault();
     try {
       const res = await axios.post("http://localhost:5000/api/referrals", formData);
+      const data = await res.json(); // Make use of 'res'
+      console.log(data); // Use 'data' somewhere in the code
+      console.log("res",res);
       alert("Referral submitted successfully!");
+
       setIsOpen(false);
     } catch (error) {
       alert("Failed to submit referral");
